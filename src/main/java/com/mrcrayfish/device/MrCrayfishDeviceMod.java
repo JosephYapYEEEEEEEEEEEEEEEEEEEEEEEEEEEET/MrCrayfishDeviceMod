@@ -57,15 +57,15 @@ public class MrCrayfishDeviceMod
 
 	private static Logger logger;
 
-	public static final boolean DEVELOPER_MODE = true;
+	public static final boolean DEVELOPER_MODE = false;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) throws LaunchException
 	{
-		if(DEVELOPER_MODE && !(Boolean) Launch.blackboard.get("fml.deobfuscatedEnvironment"))
-		{
-			throw new LaunchException();
-		}
+	//	if(DEVELOPER_MODE && !(Boolean) Launch.blackboard.get("fml.deobfuscatedEnvironment"))
+	//	{
+	//		throw new LaunchException();
+	//	}
 		logger = event.getModLog();
 
 		DeviceConfig.load(event.getSuggestedConfigurationFile());
@@ -149,14 +149,14 @@ public class MrCrayfishDeviceMod
 
 		if(!DEVELOPER_MODE)
 		{
-			// Applications (Normal)
+			 //Applications (Normal)
 			//ApplicationManager.registerApplication(new ResourceLocation(Reference.MOD_ID, "boat_racers"), ApplicationBoatRacers.class);
-			//ApplicationManager.registerApplication(new ResourceLocation(Reference.MOD_ID, "mine_bay"), ApplicationMineBay.class);
+		//	ApplicationManager.registerApplication(new ResourceLocation(Reference.MOD_ID, "mine_bay"), ApplicationMineBay.class);
 
-			// Tasks (Normal)
-			//TaskManager.registerTask(TaskAddAuction.class);
-			//TaskManager.registerTask(TaskGetAuctions.class);
-			//TaskManager.registerTask(TaskBuyItem.class);
+			 //Tasks (Normal)
+		//	TaskManager.registerTask(TaskAddAuction.class);
+		//	TaskManager.registerTask(TaskGetAuctions.class);
+		//	TaskManager.registerTask(TaskBuyItem.class);
 		}
 		else
 		{
